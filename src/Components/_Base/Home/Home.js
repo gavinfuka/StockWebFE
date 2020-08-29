@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-import Sticky from "../../Generic/Sticky/Sticky";
 import Header from "./Header/Header";
 import Body from "./Body/Body";
 import "./Home.css";
