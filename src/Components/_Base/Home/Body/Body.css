@@ -1,0 +1,15 @@
+.home-wallpaper {
+	display: flex;
+}
+
+.body {
+	display: flex;
+	margin-top: 0px;
+	height: 95vh;
+	background: url("/Images/HomeWallpaper.png");
+	background-position: center center;
+}
+.body-bg-fadeBottom {
+	height: 7.4 rem;
+	background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
+}

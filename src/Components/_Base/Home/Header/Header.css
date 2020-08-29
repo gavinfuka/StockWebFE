@@ -1,0 +1,18 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 6vh;
+}
+
+.header-fexpert-logo {
+	object-fit: contain;
+	height: 10vh;
+	/* position: fixed; */
+}
+
+.header-icon {
+	padding: 20 px;
+	color: white;
+	/* position: fixed; */
+}
