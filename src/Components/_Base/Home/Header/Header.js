@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import Sticky from "../../../Generic/Sticky/Sticky";
-
 //icon
 import TuneIcon from "@material-ui/icons/Tune";
 import IconButton from "@material-ui/core/IconButton";
