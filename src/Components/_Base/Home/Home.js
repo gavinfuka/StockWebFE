@@ -8,13 +8,30 @@ class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: "Stock Project",
+			Title: "Stock Project",
+			showTitle: false,
 		};
 	}
+
+	componentDidMount() {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY > 100) {
+				this.setState({ showTitle: true });
+			} else {
+				this.setState({ showTitle: false });
+			}
+		});
+	}
+	componentWillUnmount() {
+		window.removeEventListener("scroll");
+	}
+
 	render() {
+		const { showTitle } = this.state;
 		return (
 			<div className='home'>
-				<Header />
+				<Header show={showTitle} />
+				<Body />
 				<Body />
 			</div>
 		);
