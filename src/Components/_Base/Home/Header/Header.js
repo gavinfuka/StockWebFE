@@ -1,4 +1,4 @@
-import React, { Component, useEffect, window } from "react";
+import React, { Component } from "react";
 
 //icon
 import TuneIcon from "@material-ui/icons/Tune";
@@ -22,14 +22,12 @@ class Header extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		console.log(this.state);
 		if (prevProps !== this.props) {
 			this.componentDidMount();
 		}
 	}
 
 	render() {
-		let { state } = this.state;
 		return (
 			<div className={this.state.show ? "nav nav-show" : "nav"}>
 				{/* Icon */}

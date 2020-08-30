@@ -3,11 +3,28 @@ import React, { Component } from "react";
 import "./Body.css";
 
 class Body extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			Title: {
+				FirstRow: "Your AI ",
+				SecondRow: "Investment Advisor",
+			},
+		};
+	}
 	render() {
+		let { Title } = this.state;
 		return (
 			<div className='body'>
-				<div className='body-bg-caption'>{/* <h2>Your AI Investment Advisor</h2> */}</div>
-				<div className='body-bg-fadeBottom'></div>
+				<div className='body-caption'>
+					<div className='body-caption-row'>
+						<div id='Your'>{Title.FirstRow.split(" ")[0]}</div>
+						<div id='AI'>{Title.FirstRow.split(" ")[1]} </div>
+					</div>
+					<div>{Title.SecondRow}</div>
+				</div>
+
+				<div className='body-font-sndrow'></div>
 			</div>
 		);
 	}
