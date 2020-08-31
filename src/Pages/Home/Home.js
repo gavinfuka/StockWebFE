@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Header from "Components/Base/Header/Header";
 import Body from "Components/Base/Body/Body";
-import "Assets/css/Home.css";
+import "Pages/Home/Home.css";
 
 class Home extends Component {
 	constructor(props) {

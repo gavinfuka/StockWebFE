@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "Assets/css/Body.css";
+import "Components/Base/Body/Body.css";
 
 class Body extends Component {
 	constructor(props) {
