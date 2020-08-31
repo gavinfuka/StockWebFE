@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import Header from "./Header/Header";
-import Body from "./Body/Body";
-import "./Home.css";
+import Header from "Components/Base/Header/Header";
+import Body from "Components/Base/Body/Body";
+import "Assets/css/Home.css";
 
 class Home extends Component {
 	constructor(props) {

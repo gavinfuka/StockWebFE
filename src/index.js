@@ -7,10 +7,10 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 
 //Home Page
-import Home from "./Components/_Base/Home/Home";
+import Home from "./Pages/Home/Home";
 
 //Pages
-import Result from "./Components/Pages/Result/Result";
+import Result from "./Pages/Result/Result";
 
 //css
 import "./index.css";
