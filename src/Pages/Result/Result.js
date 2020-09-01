@@ -1,31 +1,42 @@
 import React, { Component } from "react";
-import axios from "axios";
-class Stock extends Component {
+
+import Header from "Components/_Base/Header/Header";
+import "./Result.css";
+
+class Result extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			title: "Stock Project",
+			header: {
+				show: true,
+			},
 		};
 	}
 
 	componentDidMount() {
-		this.GetData();
+		window.addEventListener("scroll", () => {
+			if (window.scrollY > 100) {
+				this.setState({ showTitle: true });
+			} else {
+				this.setState({ showTitle: false });
+			}
+		});
+	}
+	componentWillUnmount() {
+		window.removeEventListener("scroll");
 	}
 
-	GetData = async () => {
-		let { data } = await axios.get("http://localhost:5000/raw");
-		console.table(data);
-		this.state.data = data;
-	};
-
 	render() {
+		const { header } = this.state;
 		return (
 			<div>
-				<h1>{this.state.title}</h1>
-				{this.state.data}
+				<Header show={header.show}></Header>
 			</div>
+			// <div className='Result'>
+			// 	<Header show={Header.show} />
+			// </div>
 		);
 	}
 }
 
-export default Stock;
+export default Result;
