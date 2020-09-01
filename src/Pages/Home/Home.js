@@ -22,7 +22,7 @@ class Home extends Component {
 		const { header, Caption } = this.state;
 		return (
 			<div className='Home'>
-				<Header show={this.state.header.show} />
+				<Header show={header.show} />
 
 				<div className='body'>
 					<div className='body-caption'>
