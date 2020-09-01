@@ -18,24 +18,24 @@ class Home extends Component {
 		};
 	}
 
-	componentDidMount() {
-		window.addEventListener("scroll", () => {
-			if (window.scrollY > 100) {
-				this.setState({ showTitle: true });
-			} else {
-				this.setState({ showTitle: false });
-			}
-		});
-	}
-	componentWillUnmount() {
-		window.removeEventListener("scroll");
-	}
-
 	render() {
 		const { header, Caption } = this.state;
 		return (
 			<div className='Home'>
-				<Header show={header.show} />
+				<Header show={this.state.header.show} />
+
+				<div className='body'>
+					<div className='body-caption'>
+						<div className='body-caption-row'>
+							<div id='Your'>{Caption.FirstRow.split(" ")[0]}</div>
+							<div id='AI'>{Caption.FirstRow.split(" ")[1]} </div>
+						</div>
+						<div>{Caption.SecondRow}</div>
+					</div>
+
+					<div className='body-font-sndrow'></div>
+				</div>
+
 				<div className='body'>
 					<div className='body-caption'>
 						<div className='body-caption-row'>

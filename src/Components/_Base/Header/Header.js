@@ -16,15 +16,16 @@ class Header extends Component {
 	}
 
 	componentDidMount() {
-		this.setState({
-			show: this.props.show,
+		window.addEventListener("scroll", () => {
+			if (window.scrollY > 100) {
+				this.setState({ show: true });
+			} else {
+				this.setState({ show: false });
+			}
 		});
 	}
-
-	componentDidUpdate(prevProps, prevState) {
-		if (prevProps !== this.props) {
-			this.componentDidMount();
-		}
+	componentWillUnmount() {
+		window.removeEventListener("scroll");
 	}
 
 	render() {
