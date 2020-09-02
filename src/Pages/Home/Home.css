@@ -29,16 +29,16 @@
 
 .home-tagline {
 	font-family: "CircularStdBold";
-	font-size: 10vh;
+	font-size: 5vh;
 	letter-spacing: 0px;
 
 	color: white;
-	background-color: grey;
+	/* background-color: grey; */
 
 	opacity: 1;
-	mix-blend-mode: difference;
+	/* mix-blend-mode: difference; */
 	width: 100%;
-	padding-top: 30vh;
+	padding-top: 20vh;
 	text-align: center;
 }
 

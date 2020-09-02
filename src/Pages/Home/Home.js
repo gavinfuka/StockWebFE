@@ -4,37 +4,53 @@ import Header from "Components/_Base/Header/Header";
 import "./Home.css";
 
 class Home extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			header: {
-				show: false,
-			},
-			Tagline: {
-				FirstRow: "Find the Next Tesla",
-				SecondRow: "More Profit",
-				show: true,
-			},
-		};
+	static defaultProps = {
+		cssPrefix: "",
+		header: {
+			show: false,
+		},
+		Tagline: {
+			FirstRow: "Discover the Next Tesla",
+			SecondRow: "Invest with Fexpert AI",
+			show: true,
+		},
+		Button: {
+			Text: "Daily Recommandation",
+		},
+	};
+
+	static getDerivedStateFromProps(nextProps, prevStat) {
+		if (prevStat !== nextProps) {
+			return {
+				...nextProps,
+			};
+		}
+	}
+
+	renderBody() {
+		const { cssPrefix, Tagline, Button } = this.state;
+		return (
+			<div className={cssPrefix + " home-body"}>
+				<div className={cssPrefix + " home-tagline"}>
+					<h1>{Tagline.FirstRow}</h1>
+					<h6>{Tagline.SecondRow}</h6>
+				</div>
+
+				{/* button */}
+				<div className={cssPrefix + " home-button"}>
+					<button>{Button.Text}</button>
+				</div>
+			</div>
+		);
 	}
 
 	render() {
-		const { header, Tagline } = this.state;
+		const { header } = this.state;
 		return (
 			<div className='Home'>
 				<Header show={header.show} />
-
-				<div className='home-body'>
-					<div className='home-tagline'>
-						<div className='home-tagline-row'>
-							<div>{Tagline.FirstRow}</div>
-						</div>
-					</div>
-
-					<div className='home-button'>
-						<button>Daily Recommandation</button>
-					</div>
-				</div>
+				{this.renderBody()}
+				{this.renderBody()}
 			</div>
 		);
 	}

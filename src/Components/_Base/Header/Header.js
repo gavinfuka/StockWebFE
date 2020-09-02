@@ -8,13 +8,22 @@ import IconButton from "@material-ui/core/IconButton";
 import "./Header.css";
 
 class Header extends Component {
+	static defaultProps = {
+		cssPrefix: "",
+		show: false,
+	};
+
+	static getDerivedStateFromProps(nextProps, prevStat) {
+		if (prevStat !== nextProps) {
+			return { ...prevStat, nextProps };
+		}
+	}
 	constructor(props) {
 		super(props);
-		this.state = {
-			show: props.show,
-		};
+		this.state = {};
 	}
 
+	//scrollto show header
 	componentDidMount() {
 		window.addEventListener("scroll", () => {
 			if (window.scrollY > 100) {
@@ -29,11 +38,14 @@ class Header extends Component {
 	}
 
 	render() {
+		const { show, cssPrefix } = this.state;
+
+		console.log(show);
 		return (
-			<div className={this.state.show ? "nav nav-show" : "nav"}>
+			<div className={show ? cssPrefix + " nav nav-show" : cssPrefix + " nav"}>
 				{/* Icon */}
 				<IconButton>
-					<div className='header-fexpert-logo'>
+					<div className={cssPrefix + " header-fexpert-logo"}>
 						<img draggable='false' className='header-fexpert-logo' src='Images/Logo.png' alt='Fexpert' />
 					</div>
 				</IconButton>
