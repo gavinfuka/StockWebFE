@@ -10,42 +10,30 @@ class Home extends Component {
 			header: {
 				show: false,
 			},
-			Caption: {
-				FirstRow: "Your AI ",
-				SecondRow: "Investment Advisor",
+			Tagline: {
+				FirstRow: "Find the Next Tesla",
+				SecondRow: "More Profit",
 				show: true,
 			},
 		};
 	}
 
 	render() {
-		const { header, Caption } = this.state;
+		const { header, Tagline } = this.state;
 		return (
 			<div className='Home'>
 				<Header show={header.show} />
 
-				<div className='body'>
-					<div className='body-caption'>
-						<div className='body-caption-row'>
-							<div id='Your'>{Caption.FirstRow.split(" ")[0]}</div>
-							<div id='AI'>{Caption.FirstRow.split(" ")[1]} </div>
+				<div className='home-body'>
+					<div className='home-tagline'>
+						<div className='home-tagline-row'>
+							<div>{Tagline.FirstRow}</div>
 						</div>
-						<div>{Caption.SecondRow}</div>
 					</div>
 
-					<div className='body-font-sndrow'></div>
-				</div>
-
-				<div className='body'>
-					<div className='body-caption'>
-						<div className='body-caption-row'>
-							<div id='Your'>{Caption.FirstRow.split(" ")[0]}</div>
-							<div id='AI'>{Caption.FirstRow.split(" ")[1]} </div>
-						</div>
-						<div>{Caption.SecondRow}</div>
+					<div className='home-button'>
+						<button>Daily Recommandation</button>
 					</div>
-
-					<div className='body-font-sndrow'></div>
 				</div>
 			</div>
 		);
