@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 
-import Header from "Components/Base/Header/Header";
-import Body from "Components/Base/Body/Body";
+import Header from "Components/_Base/Header/Header";
+import KHeader from "Components/_Base/Header/KHeader";
+import KBody from "Components/_Base/Body/KBody";
 import "Pages/Home/Home.css";
 
 class Home extends Component {
@@ -30,9 +31,9 @@ class Home extends Component {
 		const { showTitle } = this.state;
 		return (
 			<div className='home'>
-				<Header show={showTitle} />
-				<Body />
-				<Body />
+				<KHeader show={showTitle} />
+				<KBody />
+				<KBody />
 			</div>
 		);
 	}
