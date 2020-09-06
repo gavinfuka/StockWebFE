@@ -3,6 +3,10 @@ import React, { Component } from "react";
 import Header from "Components/_Base/Header/Header";
 import "./Home.css";
 
+//new modules by Ken
+import KHeader from "Components/_Base/KHeader/KHeader";
+import KButton from "./KButton/KButton";
+
 class Home extends Component {
 	static defaultProps = {
 		cssPrefix: "",
@@ -37,9 +41,7 @@ class Home extends Component {
 				</div>
 
 				{/* button */}
-				<div className={cssPrefix + " home-button"}>
-					<button>{Button.Text}</button>
-				</div>
+				<KButton />
 			</div>
 		);
 	}
@@ -48,8 +50,9 @@ class Home extends Component {
 		const { header } = this.state;
 		return (
 			<div className='Home'>
-				<Header show={header.show} />
+				<KHeader show={header.show} />
 				{this.renderBody()}
+				{/* duplicate body to check scroll */}
 				{this.renderBody()}
 			</div>
 		);
