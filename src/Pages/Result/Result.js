@@ -37,7 +37,7 @@ class Result extends Component {
 
 	fectchData = async () => {
 		let ENV = process.env.NODE_ENV;
-		let {data} = await axios.get(config.Backend[ENV] + "/Result/SMA/2020-09-11");
+		let {data} = await axios.get(config.Backend[ENV] + "/Result/SMA");
 		return data;
 	};
 

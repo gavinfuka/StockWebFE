@@ -4,7 +4,8 @@
 }
 
 .result.Date {
-	height: 10vh;
+	padding-top: 3vh;
+	padding-bottom: 3vh;
 	text-align: center;
 	vertical-align: center;
 
