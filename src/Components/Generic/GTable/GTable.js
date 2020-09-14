@@ -1,35 +1,55 @@
 import React, {Component} from "react";
 import _ from "lodash";
 
-import {TableContainer, TableCell, Table, TableHead, TableBody, TableRow, Paper} from "@material-ui/core";
+import {TableContainer, TableCell, Table, TableHead, TableBody, TableRow, Paper, Card} from "@material-ui/core";
+import {withStyles, makeStyles} from "@material-ui/core/styles";
 
+//
+import Accessor from "_base/Accessor";
+import Header from "Components/_Base/Header/Header";
+
+import "./GTable.css";
+
+const styles = (theme) => ({});
 class GTable extends Component {
-	static defaultProps = {
-		cssPrefix: "",
-		data: "",
-		Titles: [],
-		Rows: [],
-	};
+	constructor(props) {
+		super();
+		this.state = {
+			cssPrefix: "",
+			data: [],
+			schema: [],
+			styles: {
+				TableHead: {},
+				TableBody: {},
+			},
+		};
+	}
 
 	static getDerivedStateFromProps(nextProps, prevState) {
 		if (prevState !== nextProps) {
 			return nextProps;
 		}
+		return null;
 	}
 
 	renderTitle() {
-		let titles = Object.keys(this.state.data);
-		return this.renderCells(titles);
+		let {schema} = this.state;
+		let titles = _.map(schema, (o) => o.Header);
+		return <TableRow>{this.renderCells(titles)}</TableRow>;
 	}
 
-	renderRow() {
+	renderBody() {
+		let {schema, data} = this.state;
 		let Rows = [];
+		let cols = _.map(schema, (o) => {
+			let res = Accessor.Get(data, o.accessor);
+			return res;
+		});
 
-		let cols = Object.values(this.state.data);
 		let rows = _.zip(...cols);
 
 		for (let row of rows) {
-			Rows.push(<TableRow>{this.renderCells(row)}</TableRow>);
+			Rows.push(<TableRow key={row[0]}>{this.renderCells(row)}</TableRow>);
 		}
 
 		return Rows;
@@ -44,14 +64,14 @@ class GTable extends Component {
 	}
 
 	render() {
+		let {cssPrefix} = this.state;
+
 		return (
-			<div>
+			<div className={cssPrefix + " GTable"}>
 				<TableContainer component={Paper}>
-					<Table aria-label='simple table'>
-						<TableHead>
-							<TableRow>{this.renderTitle()}</TableRow>
-						</TableHead>
-						<TableBody>{this.renderRow()}</TableBody>
+					<Table stickyHeader={true}>
+						<TableHead>{this.renderTitle()}</TableHead>
+						<TableBody>{this.renderBody()}</TableBody>
 					</Table>
 				</TableContainer>
 			</div>
@@ -59,4 +79,4 @@ class GTable extends Component {
 	}
 }
 
-export default GTable;
+export default withStyles(styles)(GTable);

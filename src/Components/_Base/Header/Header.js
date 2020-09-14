@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 
 //icon
 import TuneIcon from "@material-ui/icons/Tune";
@@ -8,28 +8,27 @@ import IconButton from "@material-ui/core/IconButton";
 import "./Header.css";
 
 class Header extends Component {
-	static defaultProps = {
-		cssPrefix: "",
-		show: false,
-	};
+	constructor() {
+		super();
+		this.state = {
+			cssPrefix: "",
+			show: false,
+		};
+	}
 
 	static getDerivedStateFromProps(nextProps, prevStat) {
 		if (prevStat !== nextProps) {
-			return { ...prevStat, nextProps };
+			return {...prevStat, nextProps};
 		}
-	}
-	constructor(props) {
-		super(props);
-		this.state = {};
 	}
 
 	//scrollto show header
 	componentDidMount() {
 		window.addEventListener("scroll", () => {
 			if (window.scrollY > 100) {
-				this.setState({ show: true });
+				this.setState({show: true});
 			} else {
-				this.setState({ show: false });
+				this.setState({show: false});
 			}
 		});
 	}
@@ -38,9 +37,8 @@ class Header extends Component {
 	}
 
 	render() {
-		const { show, cssPrefix } = this.state;
+		const {show, cssPrefix} = this.state;
 
-		console.log(show);
 		return (
 			<div className={show ? cssPrefix + " nav nav-show" : cssPrefix + " nav"}>
 				{/* Icon */}

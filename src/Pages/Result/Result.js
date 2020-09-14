@@ -1,18 +1,28 @@
+//react
 import React, {Component} from "react";
 
+//external libraries
 import axios from "axios";
-import {TableContainer, TableCell, Table, TableHead, TableBody, TableRow, Paper} from "@material-ui/core";
 
+//conpoents
 import Header from "Components/_Base/Header/Header";
-import "./Result.css";
-import config from "../../_config";
-
 import GTable from "Components/Generic/GTable/GTable";
+
+//config
+import config from "../../_config";
+import schema from "./schema";
+
+//css
+import "./Result.css";
+import {Container} from "@material-ui/core";
 
 class Result extends Component {
 	constructor(props) {
 		super();
-		this.state = {data: []};
+		this.state = {
+			cssPrefix: "result",
+			data: [],
+		};
 	}
 
 	static async getDerivedStateFromProps(nextProps, prevState) {
@@ -28,14 +38,19 @@ class Result extends Component {
 	fectchData = async () => {
 		let ENV = process.env.NODE_ENV;
 		let {data} = await axios.get(config.Backend[ENV] + "/Result/SMA/2020-09-11");
-		console.log(data);
 		return data;
 	};
 
 	render() {
-		let {data} = this.state;
-
-		return <GTable data={data} />;
+		let {cssPrefix, data} = this.state;
+		console.log(schema);
+		return (
+			<div className={cssPrefix}>
+				<Header cssPrefix={cssPrefix} />
+				<div className={cssPrefix + " Date"}>{data._id}</div>
+				<GTable data={data} schema={schema.table} cssPrefix={cssPrefix} />
+			</div>
+		);
 	}
 }
 
