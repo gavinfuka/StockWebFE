@@ -46,13 +46,13 @@ class Header extends Component {
 
 				<div>
 					<NavLink to=''>
-						<img className={cssPrefix + " header-fexpert-logo"} src='Images/Logo.png' alt='Fexpert' />
+						<img className={cssPrefix + " nav Fexpert"} src='Images/Logo.png' alt='Fexpert' />
 					</NavLink>
 				</div>
 
 				{/* Button */}
 				<IconButton>
-					<TuneIcon fontSize='large' className='header-icon' />
+					<TuneIcon fontSize='large' className=' header-icon' />
 				</IconButton>
 			</div>
 		);
