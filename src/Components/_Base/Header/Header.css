@@ -1,12 +1,6 @@
-.header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 6vh;
-}
-
 .nav {
 	position: fixed;
+	max-height: 100%;
 	top: 0;
 	padding: 0px;
 	height: 8vh;
@@ -21,19 +15,20 @@
 	transition: all 0.5s;
 }
 
-.nav-show {
+.nav.show {
 	background-color: #111;
 }
 
 .header-fexpert-logo {
 	object-fit: contain;
-	height: 15vh;
+	width: 10em;
+	vertical-align: center;
 	/* position: fixed; */
 }
 
 .header-icon {
 	object-fit: contain;
-	right: 20px;
+	padding-right: 3%;
 	color: white;
 	/* position: fixed; */
 }

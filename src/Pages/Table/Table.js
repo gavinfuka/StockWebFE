@@ -13,10 +13,10 @@ import config from "../../_config";
 import schema from "./schema";
 
 //css
-import "./Result.css";
+import "./Table.css";
 import {Container} from "@material-ui/core";
 
-class Result extends Component {
+class Table extends Component {
 	constructor(props) {
 		super();
 		this.state = {
@@ -43,10 +43,11 @@ class Result extends Component {
 
 	render() {
 		let {cssPrefix, data} = this.state;
-		console.log(schema);
+		// console.log(schema);
 		return (
 			<div className={cssPrefix}>
 				<Header cssPrefix={cssPrefix} />
+
 				<div className={cssPrefix + " Date"}>{data._id}</div>
 				<GTable data={data} schema={schema.table} cssPrefix={cssPrefix} />
 			</div>
@@ -54,4 +55,4 @@ class Result extends Component {
 	}
 }
 
-export default Result;
+export default Table;

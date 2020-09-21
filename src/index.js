@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 //dynnamic router
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -10,7 +10,7 @@ import * as serviceWorker from "./serviceWorker";
 import Home from "./Pages/Home/Home";
 
 //Pages
-import Result from "./Pages/Result/Result";
+import Table from "./Pages/Table/Table";
 
 //css
 import "./index.css";
@@ -22,7 +22,7 @@ ReactDOM.render(
 		{/* <Container> */}
 		<Switch>
 			<Route path='/' exact component={Home} />
-			<Route path='/Result' exact component={Result} />
+			<Route path='/Table' exact component={Table} />
 			{/* <Route component={NoMatch} /> */}
 		</Switch>
 		{/* </Container> */}

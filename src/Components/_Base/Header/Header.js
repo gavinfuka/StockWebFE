@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {NavLink, Link} from "react-router-dom";
 
 //icon
 import TuneIcon from "@material-ui/icons/Tune";
@@ -33,20 +34,21 @@ class Header extends Component {
 		});
 	}
 	componentWillUnmount() {
-		window.removeEventListener("scroll");
+		window.removeEventListener("scroll", []);
 	}
 
 	render() {
 		const {show, cssPrefix} = this.state;
 
 		return (
-			<div className={show ? cssPrefix + " nav nav-show" : cssPrefix + " nav"}>
+			<div className={show ? cssPrefix + " nav show" : cssPrefix + " nav"}>
 				{/* Icon */}
-				<IconButton>
-					<div className={cssPrefix + " header-fexpert-logo"}>
-						<img draggable='false' className='header-fexpert-logo' src='Images/Logo.png' alt='Fexpert' />
-					</div>
-				</IconButton>
+
+				<div>
+					<NavLink to=''>
+						<img className={cssPrefix + " header-fexpert-logo"} src='Images/Logo.png' alt='Fexpert' />
+					</NavLink>
+				</div>
 
 				{/* Button */}
 				<IconButton>
