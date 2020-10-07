@@ -1,11 +1,12 @@
 //react
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 //external libraries
 import axios from "axios";
 
 //conpoents
 import Header from "Components/_Base/Header/Header";
+import KHeader from "Components/_Base/KHeader/KHeader";
 import GTable from "Components/Generic/GTable/GTable";
 
 //config
@@ -14,8 +15,8 @@ import schema from "./schema";
 
 //css
 import "./Table.css";
-import {Container} from "@material-ui/core";
-
+import RefreshIcon from "@material-ui/icons/Refresh";
+import IconButton from "@material-ui/core/IconButton";
 class Table extends Component {
 	constructor(props) {
 		super();
@@ -32,24 +33,42 @@ class Table extends Component {
 	}
 	async componentDidMount() {
 		let data = await this.fectchData();
-		this.setState({data: data});
+		this.setState({ data: data });
 	}
 
 	fectchData = async () => {
 		let ENV = process.env.NODE_ENV;
-		let {data} = await axios.get(config.Backend[ENV] + "/Result/SMA");
+		let { data } = await axios.get(config.Backend[ENV] + "/Result/SMA");
 		return data;
 	};
 
+	Refresh = async () => {
+		let ENV = process.env.NODE_ENV;
+		let { data } = await axios.get(config.Backend[ENV] + "/Analyse/SMA");
+		return data;
+	};
+
+	renderRefreshBut = () => {
+		return (
+			<IconButton onClick={this.Refresh}>
+				<RefreshIcon />
+			</IconButton>
+		);
+	};
+
 	render() {
-		let {cssPrefix, data} = this.state;
+		let { cssPrefix, data } = this.state;
 		// console.log(schema);
 		return (
-			<div className={cssPrefix}>
-				<Header cssPrefix={cssPrefix} />
-
-				<div className={cssPrefix + " Date"}>{data._id}</div>
-				<GTable data={data} schema={schema.table} cssPrefix={cssPrefix} />
+			<div>
+				<div>
+					<Header />
+				</div>
+				<div>
+					<div className={cssPrefix + " Date"}>{data._id}</div>
+					{this.renderRefreshBut()}
+					<GTable data={data} schema={schema.table} cssPrefix={cssPrefix} />
+				</div>
 			</div>
 		);
 	}

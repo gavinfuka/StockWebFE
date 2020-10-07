@@ -10,12 +10,11 @@
 	display: flex;
 	justify-content: space-between;
 
-	/* Animations */
 	transition-timing-function: ease-in;
 	transition: all 0.5s;
 }
 
-.nav.show {
+.show {
 	background-color: #111;
 }
 
@@ -23,12 +22,10 @@
 	object-fit: contain;
 	width: 10em;
 	vertical-align: center;
-	/* position: fixed; */
 }
 
-.header-icon {
+.nav.header-icon {
 	object-fit: contain;
 	padding-right: 3%;
 	color: white;
-	/* position: fixed; */
 }

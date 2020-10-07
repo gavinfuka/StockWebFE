@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {NavLink, Link} from "react-router-dom";
+import React, { Component } from "react";
+import { NavLink, Link } from "react-router-dom";
 
 //icon
 import TuneIcon from "@material-ui/icons/Tune";
@@ -19,7 +19,7 @@ class Header extends Component {
 
 	static getDerivedStateFromProps(nextProps, prevStat) {
 		if (prevStat !== nextProps) {
-			return {...prevStat, nextProps};
+			return { ...prevStat, nextProps };
 		}
 	}
 
@@ -27,9 +27,9 @@ class Header extends Component {
 	componentDidMount() {
 		window.addEventListener("scroll", () => {
 			if (window.scrollY > 100) {
-				this.setState({show: true});
+				this.setState({ show: true });
 			} else {
-				this.setState({show: false});
+				this.setState({ show: false });
 			}
 		});
 	}
@@ -38,10 +38,10 @@ class Header extends Component {
 	}
 
 	render() {
-		const {show, cssPrefix} = this.state;
+		const { show, cssPrefix } = this.state;
 
 		return (
-			<div className={show ? cssPrefix + " nav show" : cssPrefix + " nav"}>
+			<div className={cssPrefix + " nav" + (show ? " show" : "")}>
 				{/* Icon */}
 
 				<div>
@@ -52,7 +52,7 @@ class Header extends Component {
 
 				{/* Button */}
 				<IconButton>
-					<TuneIcon fontSize='large' className='header-icon' />
+					<TuneIcon fontSize='large' className='nav.header-icon' />
 				</IconButton>
 			</div>
 		);
