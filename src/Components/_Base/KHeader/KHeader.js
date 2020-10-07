@@ -1,6 +1,6 @@
 import React from "react";
-import {NavLink, Link} from "react-router-dom";
-import {fade, makeStyles} from "@material-ui/core/styles";
+import { NavLink, Link } from "react-router-dom";
+import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -46,12 +46,13 @@ export default function KHeader() {
 	const renderMenu = (
 		<Menu
 			anchorEl={anchorEl}
-			anchorOrigin={{vertical: "top", horizontal: "right"}}
+			anchorOrigin={{ vertical: "top", horizontal: "right" }}
 			id={menuId}
 			keepMounted
-			transformOrigin={{vertical: "top", horizontal: "right"}}
+			transformOrigin={{ vertical: "top", horizontal: "right" }}
 			open={isMenuOpen}
-			onClose={handleMenuClose}>
+			onClose={handleMenuClose}
+		>
 			<MenuItem onClick={handleMenuClose}>Profile</MenuItem>
 			<MenuItem onClick={handleMenuClose}>My account</MenuItem>
 		</Menu>
@@ -61,33 +62,37 @@ export default function KHeader() {
 	const renderMobileMenu = (
 		<Menu
 			anchorEl={mobileMoreAnchorEl}
-			anchorOrigin={{vertical: "top", horizontal: "right"}}
+			anchorOrigin={{ vertical: "top", horizontal: "right" }}
 			id={mobileMenuId}
 			keepMounted
-			transformOrigin={{vertical: "top", horizontal: "right"}}
+			transformOrigin={{ vertical: "top", horizontal: "right" }}
 			open={isMobileMenuOpen}
-			onClose={handleMobileMenuClose}>
-			<MenuItem>
+			onClose={handleMobileMenuClose}
+		>
+			<MenuItem component={Link} to='Analysis'>
 				<IconButton aria-label='show 4 new mails' color='inherit'>
 					<Badge badgeContent={4} color='secondary'>
 						<MailIcon />
 					</Badge>
 				</IconButton>
-				<p>Messages</p>
+
+				<p>Analysis</p>
 			</MenuItem>
-			<MenuItem>
+			<MenuItem component={Link} to='Table'>
 				<IconButton aria-label='show 11 new notifications' color='inherit'>
 					<Badge badgeContent={11} color='secondary'>
 						<NotificationsIcon />
 					</Badge>
 				</IconButton>
-				<p>Notifications</p>
+
+				<p>Table</p>
 			</MenuItem>
-			<MenuItem onClick={handleProfileMenuOpen}>
+			<MenuItem component={Link} to=''>
 				<IconButton aria-label='account of current user' aria-controls='primary-search-account-menu' aria-haspopup='true' color='inherit'>
 					<AccountCircle />
 				</IconButton>
-				<p>Profile</p>
+
+				<p>Home</p>
 			</MenuItem>
 		</Menu>
 	);
@@ -100,7 +105,7 @@ export default function KHeader() {
 					<div className={classes.grow} />
 					<div className={classes.sectionDesktop}>
 						<Typography className={classes.option} variant='h6' noWrap>
-							<NavLink className={classes.navLink} to='#analysis'>
+							<NavLink className={classes.navLink} to='Analysis'>
 								Analysis
 							</NavLink>
 						</Typography>
