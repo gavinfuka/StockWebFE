@@ -1,31 +1,31 @@
 .nav {
-	position: fixed;
-	max-height: 100%;
-	top: 0;
-	padding: 0px;
-	height: 8vh;
-	width: 100%;
-	z-index: 1;
+  position: fixed;
+  max-height: 100%;
+  top: 0;
+  padding: 0px;
+  height: 8vh;
+  width: 100%;
+  z-index: 1;
 
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
-	transition-timing-function: ease-in;
-	transition: all 0.5s;
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
 }
 
 .show {
-	background-color: #111;
+  background-color: white;
 }
 
 .header-fexpert-logo {
-	object-fit: contain;
-	width: 10em;
-	vertical-align: center;
+  object-fit: contain;
+  width: 10em;
+  vertical-align: center;
 }
 
 .nav.header-icon {
-	object-fit: contain;
-	padding-right: 3%;
-	color: white;
+  object-fit: contain;
+  padding-right: 3%;
+  color: white;
 }
