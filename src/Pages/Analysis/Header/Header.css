@@ -1,11 +1,11 @@
 .nav {
-  position: fixed;
+  position: sticky;
   max-height: 100%;
   top: 0;
   padding: 0px;
   height: 8vh;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
 
   display: flex;
   justify-content: space-between;

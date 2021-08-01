@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-
-import Header from "Components/_Base/Header/Header";
 import "./Home.scss";
 
 //new modules by Ken
-import KHeader from "Components/_Base/KHeader/KHeader";
+import KHeader from "./KHeader/KHeader";
 
 import Birds from "./Birds";
 class Home extends Component {

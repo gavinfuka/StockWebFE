@@ -9,7 +9,7 @@ const KHeaderStyle = (theme) => ({
     padding: "0px",
     height: "8%",
     width: "100%",
-    zIndex: 1,
+    zIndex: 3,
     display: "flex",
     justifyContent: "space-between",
     /* Animations */

@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 
 //Pages
-import Table from "./Pages/Table/Table";
+import Analysis from "./Pages/Analysis/Analysis";
 
 //css
 import "./index.css";
@@ -20,7 +20,7 @@ ReactDOM.render(
     {/* <Container> */}
     <Switch>
       <Route path='/' exact component={Home} />
-      <Route path='/Table' exact component={Table} />
+      <Route path='/Analysis' exact component={Analysis} />
       {/* <Route component={NoMatch} /> */}
     </Switch>
     {/* </Container> */}
