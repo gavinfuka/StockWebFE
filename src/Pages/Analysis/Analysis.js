@@ -35,7 +35,7 @@ const Analysis = ({ cssPrefix }) => {
   fectchData();
 
   return (
-    <div className='analysis'>
+    <div className='Analysis'>
       <Header />
 
       <div className='body'>

@@ -8,7 +8,7 @@ import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Accessor from "_base/Accessor";
 import Header from "Components/_Base/Header/Header";
 
-import "./GTable.css";
+import "./GTable.scss";
 
 const styles = (theme) => ({});
 class GTable extends Component {
@@ -64,13 +64,11 @@ class GTable extends Component {
   }
 
   render() {
-    let { cssPrefix } = this.state;
-
     return (
-      <div className={cssPrefix + " GTable"}>
-        <TableContainer component={Paper}>
+      <div className={" GTable"}>
+        <TableContainer component={Paper} class={"TableContainer"}>
           <Table stickyHeader={true}>
-            <TableHead>{this.renderTitle()}</TableHead>
+            <TableHead class='TableHead'>{this.renderTitle()}</TableHead>
             <TableBody>{this.renderBody()}</TableBody>
           </Table>
         </TableContainer>
