@@ -29,7 +29,7 @@ const Analysis = ({ cssPrefix }) => {
       URL: "cluster0.upquf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     });
     let res = await db.List("stock", "vcp");
-    setData(res[0].Results);
+    setData(res[0]);
   };
 
   fectchData();
@@ -39,8 +39,8 @@ const Analysis = ({ cssPrefix }) => {
       <Header />
 
       <div className='body'>
-        <div className={cssPrefix + " Date"}>{data._id}</div>
-        <GTable data={data} schema={schema.table} cssPrefix={cssPrefix} />
+        <h2 className={"Date"}>{data && data._id}</h2>
+        <GTable data={data && data.Results} schema={schema.table} cssPrefix={cssPrefix} />
       </div>
     </div>
   );

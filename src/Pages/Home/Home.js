@@ -4,7 +4,7 @@ import "./Home.scss";
 //new modules by Ken
 import KHeader from "./KHeader/KHeader";
 
-import Birds from "./Birds";
+import Birds from "../../Components/Birds/Birds";
 class Home extends Component {
   static defaultProps = {
     cssPrefix: "",

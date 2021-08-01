@@ -6,7 +6,6 @@ import { withStyles, makeStyles } from "@material-ui/core/styles";
 
 //
 import Accessor from "_base/Accessor";
-import Header from "Components/_Base/Header/Header";
 
 import "./GTable.scss";
 

@@ -1,9 +1,8 @@
 .nav {
   position: sticky;
-  max-height: 100%;
   top: 0;
   padding: 0px;
-  height: 8vh;
+  height: 8%;
   width: 100%;
   z-index: 3;
 
@@ -12,20 +11,21 @@
 
   transition-timing-function: ease-in;
   transition: all 0.5s;
-}
 
-.show {
-  background-color: black;
+  &.show {
+    background-color: black;
+  }
+
+  .icon-button {
+    color: grey;
+    &.show {
+      color: white;
+    }
+  }
 }
 
 .header-fexpert-logo {
   object-fit: contain;
   width: 10em;
   vertical-align: center;
-}
-
-.nav.header-icon {
-  object-fit: contain;
-  padding-right: 3%;
-  color: white;
 }
