@@ -96,7 +96,7 @@ export default function KHeader() {
     <div className={classes.grow}>
       <AppBar position='fixed' className={classes.nav}>
         <Toolbar>
-          <img draggable='false' className='header-fexpert-logo' src='Images/Logo.png' alt='Fexpert' />
+          <img draggable='false' className='logo' src='Images/Logo.png' alt='Fexpert' style={{ height: "100%" }} />
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <Typography className={classes.option} variant='h6' noWrap>

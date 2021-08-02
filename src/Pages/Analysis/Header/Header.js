@@ -43,7 +43,7 @@ class Header extends Component {
     return (
       <div className={"nav" + (show ? " show" : "")}>
         <NavLink to=''>
-          <img className={"header-fexpert-logo"} src='Images/Logo.png' alt='Fexpert' />
+          <img className={"logo"} src='Images/Logo.png' alt='Fexpert' />
         </NavLink>
 
         <IconButton className={"icon-button" + (show ? " show" : "")}>
