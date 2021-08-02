@@ -25,6 +25,7 @@ const Analysis = ({ cssPrefix }) => {
       URL: "cluster0.upquf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     });
     let res = await db.List("stock", "vcp");
+    debugger;
     setData(res[0]);
   };
 
@@ -33,7 +34,6 @@ const Analysis = ({ cssPrefix }) => {
   return (
     <div className='Analysis'>
       <Header />
-
       <div className='body'>
         <h2 className={"Date"}>{data && data._id}</h2>
         <GTable key={1} data={data && data.Results} schema={schema.table} cssPrefix={cssPrefix} />

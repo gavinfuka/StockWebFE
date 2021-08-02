@@ -8,8 +8,6 @@ import { withStyles } from "@material-ui/core/styles";
 import Accessor from "_base/Accessor";
 
 import "./GTable.scss";
-
-const styles = (theme) => ({});
 class GTable extends Component {
   constructor(props) {
     super();
@@ -58,12 +56,7 @@ class GTable extends Component {
   }
 
   renderCells(list) {
-    let Cells = [];
-    let i = 0;
-    for (let ele of list) {
-      Cells.push(<TableCell key={i++}> {ele}</TableCell>);
-    }
-    return Cells;
+    return list.map((o, i) => <TableCell key={i}> {o}</TableCell>);
   }
 
   render() {
@@ -80,4 +73,4 @@ class GTable extends Component {
   }
 }
 
-export default withStyles(styles)(GTable);
+export default GTable;

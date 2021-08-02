@@ -11,9 +11,10 @@
 
   transition-timing-function: ease-in;
   transition: all 0.5s;
+  background-color: black;
 
   &.show {
-    background-color: black;
+    background-color: white;
   }
 
   .icon-button {
