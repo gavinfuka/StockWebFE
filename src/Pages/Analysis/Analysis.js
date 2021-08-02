@@ -2,20 +2,16 @@
 import React, { useState } from "react";
 
 //external libraries
-import axios from "axios";
 
 //conpoents
 import Header from "./Header/Header";
 import GTable from "Components/GTable/GTable";
 
 //config
-import config from "../../_config";
 import schema from "./schema";
 
 //css
 import "./Analysis.scss";
-import RefreshIcon from "@material-ui/icons/Refresh";
-import IconButton from "@material-ui/core/IconButton";
 
 import MongoDB from "../../Components/Database/MongoDB/MongoDB";
 
@@ -40,7 +36,7 @@ const Analysis = ({ cssPrefix }) => {
 
       <div className='body'>
         <h2 className={"Date"}>{data && data._id}</h2>
-        <GTable data={data && data.Results} schema={schema.table} cssPrefix={cssPrefix} />
+        <GTable key={1} data={data && data.Results} schema={schema.table} cssPrefix={cssPrefix} />
       </div>
     </div>
   );

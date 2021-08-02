@@ -30,7 +30,7 @@ class Home extends Component {
   }
 
   renderBody() {
-    const { cssPrefix, Tagline, Button } = this.state;
+    const { Tagline } = this.state;
     return (
       <div className={"body"}>
         <h1>{Tagline.FirstRow}</h1>

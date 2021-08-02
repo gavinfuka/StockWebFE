@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //icon
 import TuneIcon from "@material-ui/icons/Tune";
@@ -38,7 +38,7 @@ class Header extends Component {
   }
 
   render() {
-    const { show, cssPrefix } = this.state;
+    const { show } = this.state;
 
     return (
       <div className={"nav" + (show ? " show" : "")}>

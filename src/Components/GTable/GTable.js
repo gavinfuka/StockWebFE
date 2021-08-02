@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import _ from "lodash";
 
-import { TableContainer, TableCell, Table, TableHead, TableBody, TableRow, Paper, Card } from "@material-ui/core";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { TableContainer, TableCell, Table, TableHead, TableBody, TableRow, Paper } from "@material-ui/core";
+import { withStyles } from "@material-ui/core/styles";
 
 //
 import Accessor from "_base/Accessor";
@@ -14,7 +14,6 @@ class GTable extends Component {
   constructor(props) {
     super();
     this.state = {
-      cssPrefix: "",
       data: {},
       schema: [],
       styles: {
@@ -47,6 +46,10 @@ class GTable extends Component {
 
     let rows = _.zip(...cols);
 
+    rows = _.uniqBy(rows, (o) => {
+      return o[0];
+    });
+
     for (let row of rows) {
       Rows.push(<TableRow key={row[0]}>{this.renderCells(row)}</TableRow>);
     }
@@ -56,8 +59,9 @@ class GTable extends Component {
 
   renderCells(list) {
     let Cells = [];
+    let i = 0;
     for (let ele of list) {
-      Cells.push(<TableCell> {ele}</TableCell>);
+      Cells.push(<TableCell key={i++}> {ele}</TableCell>);
     }
     return Cells;
   }
@@ -65,9 +69,9 @@ class GTable extends Component {
   render() {
     return (
       <div className={" GTable"}>
-        <TableContainer component={Paper} class={"TableContainer"}>
+        <TableContainer component={Paper} className={"TableContainer"}>
           <Table stickyHeader={true}>
-            <TableHead class='TableHead'>{this.renderTitle()}</TableHead>
+            <TableHead className='TableHead'>{this.renderTitle()}</TableHead>
             <TableBody>{this.renderBody()}</TableBody>
           </Table>
         </TableContainer>

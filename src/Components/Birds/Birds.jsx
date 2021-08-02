@@ -1,23 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import "./Birds.scss";
 
 const Birds = () => {
   return (
-    <div class='container'>
-      <div class='bird-container bird-container--one'>
-        <div class='bird bird--one'></div>
+    <div className='container'>
+      <div className='bird-container bird-container--one'>
+        <div className='bird bird--one'></div>
       </div>
 
-      <div class='bird-container bird-container--two'>
-        <div class='bird bird--two'></div>
+      <div className='bird-container bird-container--two'>
+        <div className='bird bird--two'></div>
       </div>
 
-      <div class='bird-container bird-container--three'>
-        <div class='bird bird--three'></div>
+      <div className='bird-container bird-container--three'>
+        <div className='bird bird--three'></div>
       </div>
 
-      <div class='bird-container bird-container--four'>
-        <div class='bird bird--four'></div>
+      <div className='bird-container bird-container--four'>
+        <div className='bird bird--four'></div>
       </div>
     </div>
   );
