@@ -1,0 +1,43 @@
+$mainColor: #15023a;
+
+$width: 768px;
+
+@mixin mobile {
+  @media (max-width: #{$width}) {
+    @content;
+  }
+}
+@mixin respond-to($media) {
+  @if $media == iphone {
+    @media only screen and (device-width: 320px) and (device-height: 480px) {
+      @content;
+    }
+  } @else if $media == iphone-portrait {
+    @media only screen and (device-width: 320px) and (device-height: 480px) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == iphone-landscape {
+    @media only screen and (device-width: 320px) and (device-height: 480px) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == ipad {
+    @media only screen and (device-width: 768px) and (device-height: 1024px) {
+      @content;
+    }
+  } @else if $media == ipad-portrait {
+    @media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $media == ipad-landscape {
+    @media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $media == ios {
+    @media only screen and (device-width: 768px) and (device-height: 1024px) {
+      @content;
+    }
+    @media only screen and (device-width: 320px) and (device-height: 480px) {
+      @content;
+    }
+  }
+}

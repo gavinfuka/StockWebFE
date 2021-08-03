@@ -1,5 +1,7 @@
+@import "../../global.scss";
+
 .Analysis {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: #000000;
   background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
@@ -7,7 +9,7 @@
     height: 8%;
   }
   .body {
-    height: 92%;
+    height: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -27,6 +29,20 @@
       z-index: 0;
 
       position: relative;
+    }
+  }
+}
+
+@include mobile {
+  .Analysis {
+    height: 100%;
+    .body {
+      .Date {
+        font-size: 20px;
+      }
+      .GTable {
+        width: 100vw;
+      }
     }
   }
 }

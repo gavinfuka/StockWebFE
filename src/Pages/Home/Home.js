@@ -5,6 +5,8 @@ import "./Home.scss";
 import KHeader from "./KHeader/KHeader";
 
 import Birds from "../../Components/Birds/Birds";
+import { NavLink } from "react-router-dom";
+
 class Home extends Component {
   static defaultProps = {
     cssPrefix: "",
@@ -35,7 +37,9 @@ class Home extends Component {
       <div className={"body"}>
         <h1>{Tagline.FirstRow}</h1>
         <h6>{Tagline.SecondRow}</h6>
-        <button type='button'>Begin</button>
+        <NavLink to='Analysis'>
+          <button type='button'>Begin</button>
+        </NavLink>
       </div>
     );
   }
